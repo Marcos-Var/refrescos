@@ -25,20 +25,72 @@
         </section>
     </header>
 
-    <section class="about container_hero">
-        <div class="about_text" id="informacion">
-            <h2 class="title">Mira nuestros Productos</h2>
-            <p class="about_parrafo">tenesmos los refrescos mas deliciosos y a un presio increible</p>
-        </div>
-        <figure class="about_img">
-            <img src="img/coca25.jpg" alt="" class="about_picture">
-        </figure>
-        <figure class="about_img">
-            <img src="img/coca500.jpg" alt="" class="about_picture">
-        </figure>
-        <figure class="about_img">
-            <img src="img/tres.jpg" alt="" class="about_picture1">
-        </figure>
-    </section>
+    <main class="main">
+        <section class="about container_hero">
+            <div class="about_text" id="informacion">
+                <h2 class="title">Mira nuestros Productos</h2>
+                <p class="about_parrafo">tenesmos los refrescos mas deliciosos y a un precio increible</p>
+            </div>
+            <figure class="about_img">
+                <img src="img/coca25.jpg" alt="" class="about_picture">
+            </figure>
+            <figure class="about_img">
+                <img src="img/coca500.jpg" alt="" class="about_picture">
+            </figure>
+            <figure class="about_img">
+                <img src="img/tres.jpg" alt="" class="about_picture1">
+            </figure>
+        </section>
+
+        <section class="about container_hero">
+            <section class="aprender_curiosi">
+            <div id="respuesta"></div>
+            <form id="A" class="aprender_card">
+                <input type="hidden" name="ident" id="ident" class="ident" value="">
+                <input type="text" name="nombre" id="nombre" class="nombre" value="">
+                <button id="Ab" type="submit">Agregar</button>
+            </form>
+            <article class="aprender_card">
+                <table id="tabla" class="tabla">
+                    <th>Producto</th>
+                    <th>Eliminar</th>    
+                </table> 
+            </article>
+        </section>
+        </section>
+        
+    </main>
+
+    <script src="js/jquery-361.js"></script>
+    <script>
+        var contador=0;
+            $("#A").submit(function name(params) {
+                params.preventDefault();
+
+                var valor=$("#nombre").val();
+                var fila='<tr id="' +contador+   '" ><td>'+valor+'</td><td>'+ '<button onclick="remove('+contador+')">Eliminar</button>'            +'</td> </tr>';
+                document.getElementById("ident").value = contador;
+                
+                $("#tabla").append(fila);
+
+                $.post("agregarDB.php",$(this).serializeArray(),function name(data) {
+                    $("#respuesta").html(data);
+                }) 
+
+                contador=contador+1;
+           
+            });
+            
+            function remove(elemento)
+            {
+                
+                node=document.getElementById(elemento);
+                $.post("eliminarDB.php",{ident: ""+elemento, modelo: "Focus"},function name(data) {
+                $("#respuesta").html(data);
+                })
+                node.parentNode.removeChild(node);
+            }
+        
+    </script>
 </body>
 </html>
