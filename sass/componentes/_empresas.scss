@@ -1,0 +1,40 @@
+@use "../base";
+.empresas_container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    .empresa_card{
+        margin: 10px;
+        width: 70%;
+        box-shadow: base.$box-shodow;
+        border-radius: 20%;
+        background-color: rgb(255, 253, 218);
+        .empresa_picture{
+            width: 60%;
+            height: 50%;
+            margin: 30px;
+        }
+    }
+}
+
+@media screen and(max-width: map-get(base.$breakpoints, "medium")){
+    .empresas_container{
+        justify-content: space-around;
+
+        .empresa_card{
+            width: 80%;
+            margin: 10px;
+        }
+        .empresa_picture{
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}
+
+@media screen and(max-width: map-get(base.$breakpoints, "small")){
+    .empresas_container{
+        grid-template-columns: auto auto;
+    }
+}
+

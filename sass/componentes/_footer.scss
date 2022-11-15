@@ -1,0 +1,56 @@
+@use "../base";
+.footer{
+    background-image: linear-gradient(to top, #005bea 0%, #00c6fb 100%);
+    text-align: center;
+    color: cornsilk;
+
+    .footer_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer_text{
+        width: 50%;
+    }
+    .title{
+        color: cornsilk;
+    }
+    .footer_icons{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+    .footer_icon{
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 10 10;
+    }
+
+    .footer_img{
+        margin: 0;
+        width: 35%;
+    }
+    .footer_picture{
+        width: 90%;
+    }
+}
+
+@media screen and(max-width: map-get(base.$breakpoints, "small")){
+    .footer{
+        .footer_container{
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .footer_img{
+            width: 50%;
+        }
+        .footer_text{
+            width: 100%;
+        }
+    }
+}

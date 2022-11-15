@@ -1,0 +1,68 @@
+@use "../base";
+main{
+    background-color: rgb(250, 255, 240);
+}
+*{
+    box-sizing: border-box;
+}
+.title{
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 40px;
+    color: base.$primary;
+    text-align: base.$aling-title;   
+}
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .about_img{
+        width: 50%;
+        text-align: center;
+        margin: 0;
+        max-width: 100%;
+        padding: 20px;
+    }
+    .about_picture{
+        max-width: 50%;
+    }
+    .about_picture1{
+        max-width: 50%;
+    }
+    .about_text{
+            width: 50%;
+    }
+}
+
+.modo{
+    background-color: base.$secondary;
+    .modo_title{
+        margin: 0;
+        color: white;
+        text-align: center;
+    }
+}
+
+@media screen and(max-width: map-get(base.$breakpoints, "medium")){
+
+    .about{
+        justify-content: center;
+        .about_text{
+            width: 80%;
+        }
+        .about_parr{
+            font-size: 0.5rem;
+        }
+        .about_picture1{
+            align-items: center;
+        }
+    }
+
+    /* modo */
+    .modo{
+        display: block;
+        justify-content: center;
+    }
+}

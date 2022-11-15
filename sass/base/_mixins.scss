@@ -1,0 +1,13 @@
+@use "base";
+// mixins empresa
+@mixin el-empresa($colu, $fila, $pos){
+    &:nth-child(11n+#{$pos}){
+        grid-column: span $colu;
+        grid-row: span $fila;
+    }
+}
+@mixin dis-empresa {
+    @include el-empresa(1, 1, 4);
+    @include el-empresa(4, 6, 9);
+    @include el-empresa(2, 2, 8);
+}

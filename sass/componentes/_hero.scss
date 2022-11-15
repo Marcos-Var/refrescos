@@ -1,0 +1,179 @@
+@use "../base";
+header{
+    height: 100vh;
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+
+    nav{
+        display: grid;
+        input{
+            opacity: 0;
+            margin: 0%;
+            display: grid;
+        }
+    }
+    .hero_menu{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    .hero_nav{
+        font-size: 1.2rem;
+        text-align: center;
+        color: #fafafa;
+        text-decoration: none;
+        padding: 20px;
+        padding-top: 0%;
+    }
+    .hero_nav:hover{
+        background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    }
+
+    .hero_line{
+        margin: 0%;
+    }
+
+    .hero_main{
+        height: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+    }
+
+    .hero_img{
+        width: 40%;
+        text-align: center;
+        margin: 0;
+    }
+    .hero_picture{
+        max-width: 100%;
+    }
+    .hero_title{
+        font-size: 4.5rem;
+    }
+    .hero_text{
+        width: 55%;
+        color:  cornsilk;
+    }
+}
+
+@media screen and(max-width: map-get(base.$breakpoints, "medium")){
+
+    header{
+
+        .hero_main{
+            justify-content: space-evenly;
+            margin: 0 auto;
+        }
+
+        .hero_menu{
+            grid-template-columns: auto;
+            background-color: #225fc2;
+            gap: 10px;
+            width: 90%;
+            position: absolute;
+            transform-origin: 0% 0%;
+            transform: translate(-150%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        .hero{
+            height: auto;
+        }
+        
+        
+        .hero_nav{
+            border: 2px solid wheat;
+        }
+        .nav input{
+            display: inline;
+            justify-self: end;
+            margin-right: 30px;
+            width: 40px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0;
+            transform: translate(20px, 20px);    
+        }
+    
+        .nav span{
+            justify-self: end;
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-right: 10px;
+            margin-bottom: 7px;
+            background-color: wheat;
+            border-radius: 3px;
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.5s ease;
+        }
+        .nav span:first-child{
+            transform-origin: 0% 0%;
+        }
+        .nav span:nth-last-child(1){
+            transform-origin: 0% 100%;
+        }
+        .nav input:checked ~ span{
+            transform: rotate(45deg) translate(10px, 13px);
+        }
+        .nav input:checked ~ span:nth-last-child(3){
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+        .nav input:checked ~ span:nth-last-child(2){
+            transform: rotate(-45deg) translate(1.5px, -5px);
+        }
+        .nav input:checked ~ div.hero_menu{
+            transform: none;
+        }
+    
+        .hero_img{
+            margin: 10px;
+        }
+        .hero_picture{
+            max-width: 100%;
+        }
+        .hero_title{
+            font-size: 2.5rem;
+            max-width: 100%;
+        }
+        .title{
+            font-size: 2.3rem;
+            width: 90%;
+        }
+    }
+}
+
+// movil
+@media screen and(max-width: map-get(base.$breakpoints, "small")){
+    .body{
+        max-width: 80%;
+    }
+    header{
+        .hero_title{
+            font-size: 2rem;
+            max-width: 100%;
+        }
+        .title{
+            font-size: 1.7rem;
+            width: 90%;
+        }
+        .hero{
+            height: auto;
+        }
+        .container{
+            justify-content: space-evenly;
+            margin: 0;
+        }
+
+        .hero_img{
+            width: 50%;
+            margin: 15px;
+        }
+        .hero_picture{
+            max-width: 70%;
+        }
+    }
+}

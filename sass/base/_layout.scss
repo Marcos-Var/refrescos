@@ -1,0 +1,23 @@
+@use "base";
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Lora', serif; 
+    margin: 0;
+}
+
+.container_grid{
+    display: grid;
+    gap: 20px;
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.container_hero{
+    width: 90%;
+    max-width: max-content;
+    margin: 0 auto;
+    padding: base.$padding-contanier;
+}

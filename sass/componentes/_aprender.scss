@@ -1,0 +1,33 @@
+@use "../base";
+.aprender_ciencia{
+    background-color: black;
+    padding-top: 80px;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.aprender_programacion{
+    background-color: rgb(88, 84, 84);
+    padding-top: 30px;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.aprender_tecno{
+    background-color: #1249a0;
+    padding-top: 30px;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.aprender_curiosi{
+    background-color: base.$primary;
+    padding-top: 30px;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    color: cornsilk;
+}
